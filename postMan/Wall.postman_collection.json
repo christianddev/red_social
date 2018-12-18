@@ -1,0 +1,179 @@
+{
+	"info": {
+		"_postman_id": "18d2075b-bbea-44cf-a3b7-912b5f7a2f6a",
+		"name": "Wall",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Muestra Wall usuario",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1YzE4ZTliNzcyY2NhYTJmNzBlYjAxZDAiLCJpYXQiOjE1NDUxMzY1NjgsImV4cCI6MTU0NTIyMjk2OH0.ciAR4SmTYgnxqztMqhF_DaWwXEWysC7x-KVqt-sCBfw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"userId\": \"usuario1\" , \"month\":12, \"year\":2018 \n}"
+				},
+				"url": {
+					"raw": "{{url}}/api/wall",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"wall"
+					]
+				},
+				"description": "Carga el Wall de un usuario teniedo en cuenta, el idUser y el mes actual"
+			},
+			"response": []
+		},
+		{
+			"name": "Crea Wall Usuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1YzE4ZTliNzcyY2NhYTJmNzBlYjAxZDAiLCJpYXQiOjE1NDUxMzY1NjgsImV4cCI6MTU0NTIyMjk2OH0.ciAR4SmTYgnxqztMqhF_DaWwXEWysC7x-KVqt-sCBfw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"userId\": \"usuario1\", \n\"month\": 12,\n\"year\": 2018,\n\"blocked\": [],   \n\"posts\": []\n}"
+				},
+				"url": {
+					"raw": "{{url}}/api/wall/create",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"wall",
+						"create"
+					]
+				},
+				"description": "Crea un wall para un usuario teniendo en cuenta el mes actual"
+			},
+			"response": []
+		},
+		{
+			"name": "Actualiza Wall Post Usuario",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"postId\": \"5c17dc65d4f72704a44b75bb\", \n\"userId\": \"usu1\",\n\"userName\": \"usu1\",\n\"postTitle\": \"Titulo 1.2\",\n\"postText\": \"texto  1.2\",\n\"postType\": \"public\",\n\"postGroup\": \"fcb\"\t\n}"
+				},
+				"url": {
+					"raw": "{{url}}/api/wall/postUpdate",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"wall",
+						"postUpdate"
+					]
+				},
+				"description": "un usuario modifica un post propio desde wall, se debe actualizar walls y posts"
+			},
+			"response": []
+		},
+		{
+			"name": "Borra  Post Wall usuario",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"postId\": \"5c18c5d0041b4712b47e77f0\", \n\t\"userId\": \"usuario\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/api/wall/postDelete",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"wall",
+						"postDelete"
+					]
+				},
+				"description": "Actualiza Wall ,borra un post del Wall"
+			},
+			"response": []
+		},
+		{
+			"name": "Borra Wall Usuario",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/api/wall/delete",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"wall",
+						"delete"
+					]
+				},
+				"description": "Cambia el estado deleted = true y actualiza dateDel a la fecha de borrado"
+			},
+			"response": []
+		}
+	]
+}

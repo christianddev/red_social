@@ -43,9 +43,7 @@ function decodeToken(token) {
 
 async function comparePass(pass, hash) {
     try {
-        // retornar boolean, si el pass enviado coincide con el pass encriptado
-        
-        
+        // retornar boolean, si el pass enviado coincide con el pass encriptado  
         return await bcrypt.compare(pass, hash);
 
     } catch (err) {

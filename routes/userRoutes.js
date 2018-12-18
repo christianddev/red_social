@@ -10,7 +10,7 @@ const userController = require('../controllers/userController');
     // router.get( '/',  auth , userController.index)
     // router.post("/create",auth, userController.create)
     router.put( "/update", auth, userController.udpate)
-    router.post( "/signIn", userController.signIn)
+    router.post( "/logIn", userController.logIn)
     router.post( "/signUp",  userController.signUp)
     // router.delete('/delete',auth, userController.delete)
 

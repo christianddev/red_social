@@ -38,21 +38,15 @@ en cada método de las rutas disponibles, se retorna un json con una estructura 
 
 ### /api/user (colección users)
 
-- get:		
-    /api/user/	 		
-    userController.index
-
 - post:	
-    /api/user/create		
-    userController.create
-
+    /api/user/signUp
+    userController.signUp
 - post:	
+    /api/user/logIn
+    userController.logIn
+- put:	
     /api/user/update		
     userController.update
-
-- delete:	
-    /api/user/delete		
-    userController.delete 
 
 
 ### /api/wall: (colección wall y post)
@@ -111,5 +105,7 @@ postController.showAll
 
 A fecha 18/12/2018 queda pendiente:
 
-- [ ] Generación automática de los wall (un documento(wall) para el mes en curso)
-- [ ] Tratar el userId (presente en todas las colecciones ) como ObjectId
+- [ ] Generación del wall , automática/manual registro user manual y para el mes en curso.
+- [ ] Tratar el userId (presente en todas las colecciones ) como ObjectId.
+- [ ] Bloqueo de usuarios.
+- [ ] uso de los grupos 

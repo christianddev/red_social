@@ -1,0 +1,122 @@
+{
+	"info": {
+		"_postman_id": "ab35d576-deec-47ba-9eec-3dcdad51dace",
+		"name": "User",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User LogIn",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1YzE4ZTliNzcyY2NhYTJmNzBlYjAxZDAiLCJpYXQiOjE1NDUxMzY1NjgsImV4cCI6MTU0NTIyMjk2OH0.ciAR4SmTYgnxqztMqhF_DaWwXEWysC7x-KVqt-sCBfw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"perfil\":{\n\t\t\"name\": \"usuario1\", \n\t\t\"email\":\"usuario1@email.com\",\n\t\t\"password\": \"123456\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "{{url}}/api/user/logIn",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"logIn"
+					]
+				},
+				"description": "Validación del usuasrio para dar acceso al uso en los otros metodos"
+			},
+			"response": []
+		},
+		{
+			"name": "User signUp",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"perfil\":{\n\t\t\"name\": \"usuario1\", \n\t\t\"email\":\"usuario1@email.com\",\n\t\t\"password\": \"123456\"\n\t}\n}\n"
+				},
+				"url": {
+					"raw": "{{url}}/api/user/signUp",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"signUp"
+					]
+				},
+				"description": "registro del usuario y generación del token"
+			},
+			"response": []
+		},
+		{
+			"name": "User update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1YzE4ZDViZTIzYmNkZDI5MWM3NTNhZjIiLCJpYXQiOjE1NDUxMzE0NTQsImV4cCI6MTU0NTIxNzg1NH0.SyuMWx9mJCMBc40hH8fI6F1cWOEFf9BN5J6UhZBeSp8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"perfil\":{\n\t\t\"_id\": \"5c18e9b772ccaa2f70eb01d0\",\n\t\t\"name\": \"usuario1\", \n\t\t\"email\":\"usuario11@eeemail.com\"\n\t}\n}\n"
+				},
+				"url": {
+					"raw": "{{url}}/api/user/update",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"update"
+					]
+				},
+				"description": "Actualiza los datos del usuario"
+			},
+			"response": []
+		}
+	]
+}

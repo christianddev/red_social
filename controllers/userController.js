@@ -30,7 +30,6 @@ const userController = {
             $set: {
             "perfil.name": req.body.perfil.name,
             "perfil.email": req.body.perfil.email,
-            "perfil.password": req.body.perfil.password,
             groups: req.body.groups,
             blocked: req.body.blocked
             }
@@ -47,7 +46,7 @@ const userController = {
         });
     },
 
-    signIn: (req, res) => {
+    logIn: (req, res) => {
         const user = new User({
             perfil: {
                 name: req.body.perfil.name,

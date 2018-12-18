@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "7a546c40-65ef-4521-879b-89e361b28ace",
+		"name": "Comment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Muestra Comentarios Post",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"postId\": \"5c18c5b2041b4712b47e77ee\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/api/comment",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"comment"
+					]
+				},
+				"description": "Muestra los comentarios de un post"
+			},
+			"response": []
+		},
+		{
+			"name": "Crea  Comentario Post",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"postId\": \"5c18c5b2041b4712b47e77ee\",\n    \"commentUserId\": \"usuario1\" ,\n    \"commentUser\": \"usuario1\",\n    \"commentText\": \"prueba\"\t\n}"
+				},
+				"url": {
+					"raw": "{{url}}/api/comment/create",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"comment",
+						"create"
+					]
+				},
+				"description": "Crea un comentario para un post"
+			},
+			"response": []
+		},
+		{
+			"name": "Actualiza Comentario Post",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"commentId\": \"5c18c5b2041b4712b47e77ee\",\n\t\"userId\": \"usuario2\",\n\t\"commentText\": \"comentario 2.2\"\t\n}"
+				},
+				"url": {
+					"raw": "{{url}}/api/comment/update",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"comment",
+						"update"
+					]
+				},
+				"description": "Actualiza un comentario de un post"
+			},
+			"response": []
+		},
+		{
+			"name": "Borra Comentario Post",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"commentId\": \"5c0f85717af64613b85122a2\",\n\"userId\": \"usu1\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/api/comment/delete",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"comment",
+						"delete"
+					]
+				},
+				"description": "Actualzia el estado de  un comentario de un post"
+			},
+			"response": []
+		}
+	]
+}

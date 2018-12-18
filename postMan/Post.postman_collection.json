@@ -1,0 +1,263 @@
+{
+	"info": {
+		"_postman_id": "603d512a-fce6-4f0d-add8-a17627a3a4f0",
+		"name": "Post",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Muestra Lista Posts Usuario",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1YzA3YjNhMDQ1OTQ3ZDIyMzQ3ZjhhZDMiLCJpYXQiOjE1NDQwMDg2MDgsImV4cCI6MTU0NTIxODIwOH0.hCkP4XCZ0Dm953W1cYlGD0KpQrPwJmRYJgbcaXHrKQA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"userId\": \"usu1\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/api/post",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"post"
+					]
+				},
+				"description": "Muestra todos o parte de los post de un usuario"
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Post Usuario",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "07a45c00-b279-4ed9-ae10-923995879947",
+						"exec": [
+							"var moment = require('moment')\r",
+							"pm.globals.set(\"timestamp\", moment().toISOString())"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "59208407-7642-48db-9614-815166ffd5f0",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1YzE4ZTliNzcyY2NhYTJmNzBlYjAxZDAiLCJpYXQiOjE1NDUxMzY1NjgsImV4cCI6MTU0NTIyMjk2OH0.ciAR4SmTYgnxqztMqhF_DaWwXEWysC7x-KVqt-sCBfw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"userId\": \"usuario2\", \n\"userName\": \"usuario2\",\n\"postTitle\": \"otro post\",\n\"postText\": \"Nuevo en la red\",\n\"postType\": \"public\",\n\"postGroup\": \"gym\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/api/post/create",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"post",
+						"create"
+					]
+				},
+				"description": "Crea un post con los datos que recibe desde el body"
+			},
+			"response": [
+				{
+					"name": "Crear Post Usuario",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"userId\": \"usu22\",\n\"userName\": \"usuario1\",\n\"postDate\": {{timestamp}},\n\"postTitle\": \"my post 4\",\n\"postText\": \"texto my post 4\",\n\"postType\": \"public\",\n\"postGroup\": \"fcb\",\n\"month\": 11,\n\"year\": 2018\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/post/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"post",
+								"create"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self'"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "937"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 12 Dec 2018 09:43:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\">\n        <title>Error</title>\n    </head>\n    <body>\n        <pre>SyntaxError: Unexpected token / in JSON at position 59\n            <br> &nbsp; &nbsp;at JSON.parse (&lt;anonymous&gt;)\n            <br> &nbsp; &nbsp;at parse (E:\\Node\\Ejercicios\\mongoose\\node_modules\\body-parser\\lib\\types\\json.js:89:19)\n            <br> &nbsp; &nbsp;at E:\\Node\\Ejercicios\\mongoose\\node_modules\\body-parser\\lib\\read.js:121:18\n            <br> &nbsp; &nbsp;at invokeCallback (E:\\Node\\Ejercicios\\mongoose\\node_modules\\raw-body\\index.js:224:16)\n            <br> &nbsp; &nbsp;at done (E:\\Node\\Ejercicios\\mongoose\\node_modules\\raw-body\\index.js:213:7)\n            <br> &nbsp; &nbsp;at IncomingMessage.onEnd (E:\\Node\\Ejercicios\\mongoose\\node_modules\\raw-body\\index.js:273:7)\n            <br> &nbsp; &nbsp;at IncomingMessage.emit (events.js:182:13)\n            <br> &nbsp; &nbsp;at endReadableNT (_stream_readable.js:1094:12)\n            <br> &nbsp; &nbsp;at process._tickCallback (internal/process/next_tick.js:63:19)\n        </pre>\n    </body>\n</html>"
+				}
+			]
+		},
+		{
+			"name": "Actualizar Post Usuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1YzE4ZTliNzcyY2NhYTJmNzBlYjAxZDAiLCJpYXQiOjE1NDUxMzY1NjgsImV4cCI6MTU0NTIyMjk2OH0.ciAR4SmTYgnxqztMqhF_DaWwXEWysC7x-KVqt-sCBfw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"postId\": \"5c18ecae6f86a507c8f7cf78\", \n\"userId\": \"usuario1\",\n\"userName\": \"usuario1\",\n\"postTitle\": \"Titulo A-2\",\n\"postText\": \"texto  A.2\",\n\"postType\": \"public\",\n\"postGroup\": \"fcb\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/api/post/update",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"post",
+						"update"
+					]
+				},
+				"description": "Actualia un post, edited cambia a true"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar Post usuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1YzE4ZTliNzcyY2NhYTJmNzBlYjAxZDAiLCJpYXQiOjE1NDUxMzY1NjgsImV4cCI6MTU0NTIyMjk2OH0.ciAR4SmTYgnxqztMqhF_DaWwXEWysC7x-KVqt-sCBfw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"postId\": \"5c18ed656f86a507c8f7cf7a\",  \n\"userId\": \"usuario2\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/api/post/delete",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"post",
+						"delete"
+					]
+				},
+				"description": "Actualiza el campo delete a true, por defecto nos e borra información , solo se cambia su estado"
+			},
+			"response": []
+		}
+	]
+}
