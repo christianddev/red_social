@@ -36,7 +36,6 @@ las rutas de acceso a la api, se agrupan en:
 ​	get: 	/api/wall/  			wallController.showWallUser
 ​	post: 	/api/wall/create 		wallController.createWallUser
 ​	put:		/api/wall/postupdate	 wallController.updatePost 
-
 ​	delete:	/api/wall/postDetele	wallController.removePost	
 
 ### /api/post: (colección post y wall)
@@ -49,7 +48,5 @@ las rutas de acceso a la api, se agrupan en:
 ### /api/comment (colección comment y wall)
 
 ​	get:		/api/comment/	 	commentController.ShowAll
-
 ​	post:	/api/comment/create	commentController.create
-
 ​	delete:	/api/comment/delete	commentController.delete
