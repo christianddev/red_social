@@ -38,7 +38,7 @@ las rutas de acceso a la api, se agrupan en:
 ​	put:		/api/wall/postupdate	 wallController.updatePost 
 ​	delete:	/api/wall/postDetele	wallController.removePost	
 
-### /api/post: (colección post y wall)
+### /api/post: (colección post y wall )
 
 ​	get:		/api/post/			postController.showAll 
 ​	create:  	/api/post/create		postController.create
