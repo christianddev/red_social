@@ -1,21 +1,17 @@
+'use_strict';
 const express = require('express');
 router = express.Router();
-
+const auth = require('../middlewares/auth');
 const userController = require('../controllers/userController');
 
-//Los datos se envian en el "body" (id´s, ), 
-//por URL solo recibe "la ruta"
+
 //USER
-    //http://localhost:3000//user/index 
-    router.get( '/',   userController.index)
 
-    //http://localhost:3000/user/create
-    router.post("/create",  userController.create)
-
-    //http://localhost:3000//user/update
-    router.put( "/update",  userController.update)
-
-    //http://localhost:3000//user/delete
-    router.delete('/delete',userController.delete)
+    // router.get( '/',  auth , userController.index)
+    // router.post("/create",auth, userController.create)
+    router.put( "/update", auth, userController.udpate)
+    router.post( "/signIn", userController.signIn)
+    router.post( "/signUp",  userController.signUp)
+    // router.delete('/delete',auth, userController.delete)
 
 module.exports = router

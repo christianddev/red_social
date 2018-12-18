@@ -13,10 +13,10 @@ const WallRoutes = require('../routes/wallRoutes');
 
 
 app.use('/api/user', UserRoutes);
+app.use('/api/login', LoginRoutes);   
 app.use('/api/wall', WallRoutes);    
 app.use('/api/post', PostRoutes);
 app.use('/api/comment', CommentRoutes); 
-app.use('/api/login', LoginRoutes);   
 app.use('/', HomeRoutes);   
 
 module.exports = app;

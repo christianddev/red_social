@@ -1,57 +1,5 @@
-﻿
-//Metodos HTTP disponibles por {{url}}/api0
-//	Algunos metodos como "Crear post usuario", internamente, 
-//	llaman  a otros metodos como "wallControlador", que a�ade el post a los documentos del mes actual
-
-Post:
-	GET:	Muestra lista post usuario
-	POST:	Crea post usuario
-	PUT:	Actualzia post usuario
-	DEL:	Borra post usuario
-
-Comment:
-	GET:	Muestra comentarios post
-	POST:	Crea comentario post
-	PUT:	Actualzia comentario post
-	DEL:	Borra comentario post
-
-Wall:
-	GET:	Muestra wall usuario
-	POST:	Crea wall usuario
-	PUT:	Actualzia wall comment usuario	//Desde comment
-	DEL:	Borra post wall usuario 		//Desde wall   	//UNIFICAR? por parametro interno identificar si es un comment o un post
-	DEL:	Borra commentwall usuario		//Desde wall	//UNIFICAR?
-	DEL:	Borra wall						//Cambio de mes
-	
-User:
-
-
-PostMan, Rutas:
-Wall: (afecta a la colección wall y post)
-	showWallUser
-	createWallUser
-	updatePost (solo el userId y postId coincide)
-
-
-Post: (afecta a la colección post y wall)
-	showAll (muestra todos los post del usuario (deleted = false))
-	create  
-	update 
-	delete 	(colección posts -> atualiza la fecha dateMod y los campos edited y deleted los pasa a true )
-			(colección walls -> borra el post de los wall en los que se encuentre dicho post )  
-
-Comment:
-
-
-revisar:
+﻿revisar:
 	generar muro con variso a inciio de mes, o crearlo vacio e ir realizando actualizaciones
 	Desde el muro añadir comentarios a un post ?
 	tratar el usuerId como ObjectId
 	usar autenticación
-
-///////////////////////////////
-/////// NOTAS DESAROLLO ///////
-///////////////////////////////
-d�a 1, al generar muro, si no hay informac�n:
-	mostrar un resumen(con el numero de post o coments del m�s anterior)
-	aviso coforme en el mes actual , no hay contenido nuevo, ¿muestra el contenido actual (no borra wl wall)?
