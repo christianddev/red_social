@@ -10,7 +10,7 @@ const indexRoutes = require('./routes/indexRoutes');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
-app.use('/api/', indexRoutes);
+app.use('/', indexRoutes);
 
 
 app.listen(config.port, ()=>{

@@ -5,7 +5,7 @@ router = express.Router();
 
 //HOME
     router.get('/',(req, res)=>{
-        res.status(200).send('login RedSocial')
+        res.status(200).send('Home RedSocial')
     });
 
 module.exports = router
