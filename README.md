@@ -1,6 +1,6 @@
 # Red Social
 
-Este proyecto fin de curso
+Proyecto fin de curso
 
 ## Tecnologías
 
