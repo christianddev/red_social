@@ -1,0 +1,17 @@
+{
+  "name": "red_social",
+  "version": "1.0.0",
+  "description": "Este proyecto fin de curso",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Christian Garcia",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.3.13"
+  }
+}
