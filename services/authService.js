@@ -1,7 +1,8 @@
 'use strict';
 
 const config = require('../config/config')
-const jwt = require('jwt-simple')
+//const jwt = require('jwt-simple')
+const jwt = require('jsonwebtoken')
 const moment = require('moment')
 const bcrypt = require('bcrypt')
 
@@ -32,10 +33,11 @@ function decodeToken(token) {
                 })
             }
             resolve(payload.sub)
-        } catch {
+        } catch  (err) {
             reject({
                 status: 500,
-                message: 'Token Invalido'
+                message: 'Token Invalido',
+                err
             })
         }
     })
@@ -56,3 +58,4 @@ module.exports = {
     decodeToken,
     comparePass
 };
+
