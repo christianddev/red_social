@@ -13,7 +13,7 @@ código fuente disponible en https://github.com/david9015/red_social ,
 disponible online desde heroku: https://christian-red-social-rest-api.herokuapp.com/
 
 ## Rutas
-rutas de acceso a la api:
+incialmente, se plantean las siguientes rutas de acceso a la api:
 
 - /api/user
 - /api/wall
@@ -46,7 +46,7 @@ en la mayoria de los metodos disponibles, se retorna un json con una estructura 
     userController.update
 
 
-### /api/wall: (colección wall y post)
+### /api/wall: (colección wall y post)*
 
 - get: 	
     /api/wall/  			
@@ -97,6 +97,7 @@ postController.showAll
     /api/comment/delete	
     commentController.delete
 
+### *las rutas se unificaran en un único fichero (controlador), inicialmente cada ruta tenia definido un fichero controlador.
 
 ### Pendiente
 
