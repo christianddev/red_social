@@ -10,20 +10,19 @@ NodeJS, Express, MongoDB.
 Se utiliza el servicio mLab (config/config.js)
 
 ### Repositorio
-código del proyecto disponible en https://github.com/david9015/red_social ,
+código fuente disponible en https://github.com/david9015/red_social ,
 
-acceso desde heroku: https://christian-red-social-rest-api.herokuapp.com/
+disponible online desde heroku: https://christian-red-social-rest-api.herokuapp.com/
 
 ## Rutas
-
-las rutas de acceso a la api, se agrupan en:
+rutas de acceso a la api:
 
 - /api/user
 - /api/wall
 - /api/post
 - /api/comment
 
-en cada método de las rutas disponibles, se retorna un json con una estructura  similar a :
+en la mayoria de los metodos disponibles, se retorna un json con una estructura  similar a :
 
 ```json
 { "ok":true, "msg":"msg", result}
@@ -34,7 +33,7 @@ en cada método de las rutas disponibles, se retorna un json con una estructura 
 ```
 
 
-
+###EN DESARROLLO...
 
 ### /api/user (colección users)
 
@@ -68,7 +67,7 @@ en cada método de las rutas disponibles, se retorna un json con una estructura 
     wallController.removePost	
 
 
-### /api/post: (colección post y wall)
+### /api/post: (colección post y wall)*
 
 - get:		
 	/api/post/			
@@ -86,7 +85,7 @@ postController.showAll
     /api/post/delete		
     postController.delete
 
-### /api/comment (colección comment y wall)
+### /api/comment (colección comment y wall)*
 
 - get:		
     /api/comment/	 	
@@ -103,9 +102,7 @@ postController.showAll
 
 ### Pendiente
 
-A fecha 18/12/2018 queda pendiente:
-
-- [ ] Generación del wall , automática/manual registro user manual y para el mes en curso.
-- [ ] Tratar el userId (presente en todas las colecciones ) como ObjectId.
+- [ ] Generación del wall , automática / manual para el mes en curso.
+- [ ] Usar el userId (ObjectId).
 - [ ] Bloqueo de usuarios.
 - [ ] uso de los grupos 
