@@ -8,7 +8,7 @@ NodeJS, Express, MongoDB.
 Se utiliza el servicio mLab (config/config.js)
 
 ### Repositorio
-código fuente disponible en https://github.com/david9015/red_social ,
+código fuente disponible en https://github.com/christiandgg/red_social ,
 
 disponible online desde heroku: https://christian-red-social-rest-api.herokuapp.com/
 
